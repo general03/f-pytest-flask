@@ -27,6 +27,12 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.9'
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: result-coverage
+          path: build/result.txt
+
       - name: Run a multi-line script
         env:
             PYTHONPATH: $(pwd)
@@ -34,5 +40,5 @@ jobs:
           export PYTHONPATH=$(pwd)
           pip install pipenv
           pipenv install --dev
-          pipenv run pytest -sv
+          pipenv run pytest -sv --cov=. > build/result.txt
   
