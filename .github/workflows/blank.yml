@@ -29,9 +29,9 @@ jobs:
           python-version: '3.9'
       - name: Run a multi-line script
         env:
-            PYTHONPATH: ${pwd)
+            PYTHONPATH: $(pwd)
         run: |
-          export PYTHONPATH=${pwd)
+          export PYTHONPATH=$(pwd)
           pip install pipenv
           pipenv install --dev
           pipenv run pytest -sv
