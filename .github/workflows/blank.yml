@@ -31,6 +31,7 @@ jobs:
         env:
             PYTHONPATH: ${pwd)
         run: |
+          export PYTHONPATH=${pwd)
           pip install pipenv
           pipenv install --dev
           pipenv run pytest -sv
