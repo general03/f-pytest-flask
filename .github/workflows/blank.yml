@@ -40,4 +40,4 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: result-coverage
-          path: htmlcov
+          path: /home/runner/work/f-pytest-flask/f-pytest-flask/htmlcov
