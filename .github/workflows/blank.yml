@@ -28,6 +28,7 @@ jobs:
         env:
             PYTHONPATH: ${pwd)
         run: |
+          pip install pipenv
           pipenv install
           pipenv run pytest -sv
   
