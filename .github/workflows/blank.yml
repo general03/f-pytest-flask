@@ -35,9 +35,9 @@ jobs:
           export PYTHONPATH=$(pwd)
           pip install pipenv
           pipenv install --dev
-          pipenv run pytest -sv --cov=. > build/result.txt
+          pipenv run pytest -sv --cov=. > ~/build/result.txt
   
       - uses: actions/download-artifact@v2
         with:
           name: result-coverage
-          path: build/result.txt
+          path: ~/build/result.txt
