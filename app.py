@@ -1,12 +1,13 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hallo, World!</p>"
+    return "<p>Hello, World!</p>"
 
 @app.route("/other")
 def hello_other():
-    return "<p>Hello, Other!</p>"
+    page = request.args.get('page', default = 1, type = int)
+    return f"<p>Hello, Other!</p><p>Page : {page}<:p>"
 
