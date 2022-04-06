@@ -1,6 +1,7 @@
 from urllib import request
-import pytest
 from api import get_api_url
+from pathlib import Path
+import pytest 
 
 def get_api_file():
     
@@ -18,3 +19,8 @@ def test_mocking_get_api_file(mocker):
 def test_get_api_url_url():
 
     assert 'https://random-d.uk/api' in get_api_file()
+
+
+@pytest.mark.usefixtures("clean_folder_export_html")
+def test_clean_export_html():
+    assert Path('./htmlcov/index.html').exists() == False

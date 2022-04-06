@@ -14,3 +14,8 @@ def test_param_other(create_app, param):
         response = test_client.get(f"/other?page={param}")
         assert response.status_code == 200
         assert bytes(f"Page : {param}", "utf-8") in response.data
+
+def test_fail_exp(create_app):
+    with pytest.raises(ValueError):
+        with create_app.test_client() as test_client:
+            test_client.get(f"/exp?value=test")
