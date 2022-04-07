@@ -11,6 +11,7 @@ pytest-cov = "*"
 [dev-packages]
 pytest = "*"
 pytest-mock = "*"
+locust = "*"
 
 [requires]
 python_version = "3.9"
