@@ -1,7 +1,7 @@
 from urllib import request
 from api import get_api_url
 from pathlib import Path
-import pytest 
+import pytest
 
 def get_api_file():
     
